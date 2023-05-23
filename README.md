@@ -20,7 +20,7 @@ By developing accurate and effective methods to predict fake news, social scient
 2. What are the biggest differences between articles from reliable and unreliable sources and are there topics that are more susceptible to being faked?
 
 #### Data
-Data come from [this](https://www.kaggle.com/competitions/fake-news/data) Kaggle competition. The key file is ```bash train.csv ```, which is a labeled dataset of 20,800 news articles. The ```bash test.csv``` file does not contain labels so I excluded it from this project.
+Data come from [this](https://www.kaggle.com/competitions/fake-news/data) Kaggle competition. The key file is ```train.csv```, which is a labeled dataset of 20,800 news articles. The ```test.csv``` file does not contain labels so I excluded it from this project.
 
 #### Procedure
 The project is divided into two main parts and uses PySpark:
@@ -38,21 +38,25 @@ The project is divided into two main parts and uses PySpark:
         * Code: [lda.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/lda.ipynb)
 
 #### Results
-* Fake News Prediction - data for both models were split into an 80/20 train-test split
+* **Fake News Prediction** - data for both models were split into an 80/20 train-test split
 
-    * Logistic Regression: I chose a logistic regression model since logistic regression is relatively simple and interpretable and provides a probabilistic interpretation of classification results. I performed hyperparameter tuning via 5-fold grid search cross validation of the regularization parameter and elastic net parameter. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9732 and 0.9217, respectively, indicating that fake news can be predicted well using a matrix of n-gram token counts from the count vectorizer and logistic regression.
+    * **Logistic Regression** 
+    I chose a logistic regression model since logistic regression is relatively simple and interpretable and provides a probabilistic interpretation of classification results. I performed hyperparameter tuning via 5-fold grid search cross validation of the regularization parameter and elastic net parameter. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9732 and 0.9217, respectively, indicating that fake news can be predicted well using a matrix of n-gram token counts from the count vectorizer and logistic regression.
 
-    * Gradient Boosted Tree Classifier: The second model I chose to use was a gradient boosted tree since they are generally considered accurate, stable, and highly interpretable. Additionally, contrary to linear models such as logistic regression, tree-based models don’t assume our data have linear boundaries. I performed hyperparameter tuning via 5-fold grid search cross validation of maximum depth of the tree and maximum number of iterations. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9724 and 0.9071, respectively. The test AUC is similar to the one from the logistic regression model, but test accuracy was slightly lower here.
+    * **Gradient Boosted Tree Classifier** 
+    The second model I chose to use was a gradient boosted tree since they are generally considered accurate, stable, and highly interpretable. Additionally, contrary to linear models such as logistic regression, tree-based models don’t assume our data have linear boundaries. I performed hyperparameter tuning via 5-fold grid search cross validation of maximum depth of the tree and maximum number of iterations. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9724 and 0.9071, respectively. The test AUC is similar to the one from the logistic regression model, but test accuracy was slightly lower here.
 
-* LDA Topic Modeling
+* **LDA Topic Modeling**
 
-The image below shows the results from 10 topics from unreliable (fake) articles.
+**Results from the top 10 words from 10 topics**
+
+**Unreliable (fake) articles**
 <img src="output/fake_topics.png?raw=true"/>
 
-The image below shows the results from 10 topics from reliable (real) articles.
+**Unreliable (fake) articles**
 <img src="output/real_topics.png?raw=true"/>
 
-
+From the images above, we can see that topics and frequent words from fake news articles tend to be polarizing and controversial (i.e., 2016 Presidential Election in Topics 2 and 3). While topics and frequent words from real news articles overlap with the ones from fake news articles (Topics 1 and 3), we can see from the wordclouds in Topics 1, 7, and 8 that honorifics are commonly used. I used an arbitrary number of topics (10), but for future work, it would be a good idea to determine the number of topics less arbitrarily and examine the differences in frequently used words and topics from LDA more analytically.
 
 [^1]: https://www.pewresearch.org/journalism/2016/12/15/many-americans-believe-fake-news-is-sowing-confusion/
 [^2]: https://libguides.exeter.ac.uk/fakenews/consequences
