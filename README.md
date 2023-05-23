@@ -48,13 +48,13 @@ The project is divided into two main parts and uses PySpark:
 
 * **LDA Topic Modeling**
 
-    **Results from the top 10 words from 10 topics**
+    * **Results from the top 10 words from 10 topics**
 
-    **Unreliable (fake) articles**
-    <img src="output/fake_topics.png?raw=true"/>
+        * **Unreliable (fake) articles**
+        <img src="output/fake_topics.png?raw=true"/>
 
-    **Reliable (real) articles**
-    <img src="output/real_topics.png?raw=true"/>
+        * **Reliable (real) articles**
+        <img src="output/real_topics.png?raw=true"/>
 
     From the images above, we can see that topics and frequent words from fake news articles tend to be polarizing and controversial (i.e., 2016 Presidential Election in Topics 2 and 3). While topics and frequent words from real news articles overlap with the ones from fake news articles (Topics 1 and 3), we can see from the wordclouds in Topics 1, 7, and 8 that honorifics are commonly used. I used an arbitrary number of topics (10), but for future work, it would be a good idea to determine the number of topics less arbitrarily and examine the differences in frequently used words and topics from LDA more analytically.
 
