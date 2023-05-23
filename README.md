@@ -29,10 +29,10 @@ The project is divided into two main parts and used PySpark run on Google Colabo
     1. Data cleaning
         1. Tokenize text
         2. Clean & normalize tokens: remove stop words, punctuation, make all text lowercase and lemmatize words (extracting base words, e.g., "running" becomes "run")
-    2. Convert text into matrix format: convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
+    2. Embed text: convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
 
 2. Build a machine learning pipeline to obtain predictions (each notebook performs requisite text cleaning and preprocessing before applying models)
-    1. Build and tune two models, logistic regression and gradient boosted trees, to predict whether an article is from an unreliable source (fake)
+    1. Build and tune two models, logistic regression and gradient boosted tree, to predict whether an article is unreliable (fake)
         * Code: [fake_news_prediction.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/fake_news_prediction.ipynb)
     2. Perform Linear discriminant analysis (LDA) topic modeling to analyze which topics are more likely to be manipulated into fake news. 
         * Code: [lda.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/lda.ipynb)
