@@ -23,18 +23,18 @@ By developing accurate and effective methods to predict fake news, social scient
 Data come from [this](https://www.kaggle.com/competitions/fake-news/data) Kaggle competition. The key file is ```train.csv```, which is a labeled dataset of 20,800 news articles. The ```test.csv``` file does not contain labels so I excluded it from this project.
 
 #### Process
-The project is divided into two main parts and used PySpark:
+The project is divided into two main parts and used PySpark run on Google Colaboratory, but can be adjusted to an AWS EMR cluster or the Midway Research Computing Cluster:
 
-1. Build a text cleaning and preprocessing pipeline
+1. Build text cleaning and preprocessing pipelines
     1. Data cleaning
         1. Tokenize text
-        2. Clean & normalize tokens: remove stop words, punctuation, make all text lowercase and lemmatize words (extracting base words--for example "running" --> "run")
-    2. Text processing: convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
+        2. Clean & normalize tokens: remove stop words, punctuation, make all text lowercase and lemmatize words (extracting base words, e.g., "running" becomes "run")
+    2. Convert text into matrix format: convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
 
-2. Build a machine learning pipeline to obtain predictions (each notebook also performs text cleaning and preprocessing)
-    1. Build and tune models (logistic regression and gradient boosted trees) to predict whether an article is from an unreliable source (fake)
+2. Build a machine learning pipeline to obtain predictions (each notebook performs requisite text cleaning and preprocessing before applying models)
+    1. Build and tune two models, logistic regression and gradient boosted trees, to predict whether an article is from an unreliable source (fake)
         * Code: [fake_news_prediction.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/fake_news_prediction.ipynb)
-    2. Perform LDA topic modeling to analyze which topics are more likely to be manipulated into fake news. 
+    2. Perform Linear discriminant analysis (LDA) topic modeling to analyze which topics are more likely to be manipulated into fake news. 
         * Code: [lda.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/lda.ipynb)
 
 #### Results
