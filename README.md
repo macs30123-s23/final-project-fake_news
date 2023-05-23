@@ -40,13 +40,9 @@ The project is divided into two main parts and uses PySpark:
 #### Results
 * **Fake News Prediction** - data for both models were split into an 80/20 train-test split
 
-    * **Logistic Regression** 
+    * **Logistic Regression:** I chose a logistic regression model since logistic regression is relatively simple and interpretable and provides a probabilistic interpretation of classification results. I performed hyperparameter tuning via 5-fold grid search cross validation of the regularization parameter and elastic net parameter. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9732 and 0.9217, respectively, indicating that fake news can be predicted well using a matrix of n-gram token counts from the count vectorizer and logistic regression.
 
-    I chose a logistic regression model since logistic regression is relatively simple and interpretable and provides a probabilistic interpretation of classification results. I performed hyperparameter tuning via 5-fold grid search cross validation of the regularization parameter and elastic net parameter. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9732 and 0.9217, respectively, indicating that fake news can be predicted well using a matrix of n-gram token counts from the count vectorizer and logistic regression.
-
-    * **Gradient Boosted Tree Classifier** 
-    
-    The second model I chose to use was a gradient boosted tree since they are generally considered accurate, stable, and highly interpretable. Additionally, contrary to linear models such as logistic regression, tree-based models don’t assume our data have linear boundaries. I performed hyperparameter tuning via 5-fold grid search cross validation of maximum depth of the tree and maximum number of iterations. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9724 and 0.9071, respectively. The test AUC is similar to the one from the logistic regression model, but test accuracy was slightly lower here.
+    * **Gradient Boosted Tree Classifie:** The second model I chose to use was a gradient boosted tree since they are generally considered accurate, stable, and highly interpretable. Additionally, contrary to linear models such as logistic regression, tree-based models don’t assume our data have linear boundaries. I performed hyperparameter tuning via 5-fold grid search cross validation of maximum depth of the tree and maximum number of iterations. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9724 and 0.9071, respectively. The test AUC is similar to the one from the logistic regression model, but test accuracy was slightly lower here.
 
 * **LDA Topic Modeling**
 
