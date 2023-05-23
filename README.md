@@ -29,7 +29,7 @@ The project is divided into two main parts and uses PySpark:
     1. Data cleaning
         1. Tokenize text
         2. Clean & normalize tokens: remove stop words, punctuation, make all text lowercase and lemmatize words (extracting base words--for example "running" --> "run")
-    2. Text processing - convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
+    2. Text processing: convert preprocessed tokens to a numerical format models can take in using a count vectorizer which takes in n-grams from the corpus and counts the number of instances that n-gram is seen in the example
 
 2. Build a machine learning pipeline to obtain predictions (each notebook also performs text cleaning and preprocessing)
     1. Build and tune models (logistic regression and gradient boosted trees) to predict whether an article is from an unreliable source (fake)
@@ -38,7 +38,7 @@ The project is divided into two main parts and uses PySpark:
         * Code: [lda.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/lda.ipynb)
 
 #### Results
-* **Fake News Prediction** - data for both models were split into an 80/20 train-test split
+* **Fake News Prediction:** data for both models were split into an 80/20 train-test split
 
     * **Logistic Regression:** I chose a logistic regression model since logistic regression is relatively simple and interpretable and provides a probabilistic interpretation of classification results. I performed hyperparameter tuning via 5-fold grid search cross validation of the regularization parameter and elastic net parameter. The evaluator used was the BinaryClassificationEvaluator from PySpark with AUC-ROC as the evaluation metric. The test AUC and test accuracy came out to 0.9732 and 0.9217, respectively, indicating that fake news can be predicted well using a matrix of n-gram token counts from the count vectorizer and logistic regression.
 
@@ -50,7 +50,7 @@ The project is divided into two main parts and uses PySpark:
 
         * **Unreliable (fake) articles:**
         <img src="output/fake_topics.png?raw=true"/>
-
+        <br>
         * **Reliable (real) articles:**
         <img src="output/real_topics.png?raw=true"/>
 
