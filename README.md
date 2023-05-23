@@ -17,7 +17,7 @@ By developing accurate and effective methods to predict fake news, social scient
 
 #### Research Questions
 1. Can fake news be predicted and if so, how well?
-2. What are the biggest differences between articles from reliable and unreliable sources and are there topics that are more susceptible to being faked?
+2. What are the biggest differences between reliable and unreliable articles, and are there topics that are more susceptible to being faked?
 
 #### Data
 Data come from [this](https://www.kaggle.com/competitions/fake-news/data) Kaggle competition. The key file is ```train.csv```, which is a labeled dataset of 20,800 news articles. The ```test.csv``` file does not contain labels so I excluded it from this project.
@@ -34,7 +34,7 @@ The project is divided into two main parts and used PySpark run on Google Colabo
 2. Build a machine learning pipeline to obtain predictions (each notebook performs requisite text cleaning and preprocessing before applying models)
     1. Build and tune two models, logistic regression and gradient boosted tree, to predict whether an article is unreliable (fake)
         * Code: [fake_news_prediction.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/fake_news_prediction.ipynb)
-    2. Perform Linear discriminant analysis (LDA) topic modeling to analyze which topics are more likely to be manipulated into fake news. 
+    2. Perform linear discriminant analysis (LDA) topic modeling to analyze which topics are more likely to be manipulated into fake news. 
         * Code: [lda.ipynb](https://github.com/macs30123-s23/final-project-fake_news/blob/main/lda.ipynb)
 
 #### Results
