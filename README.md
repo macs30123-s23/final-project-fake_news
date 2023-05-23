@@ -10,8 +10,8 @@ By developing accurate and effective methods to predict fake news, social scient
 ### 2. Why Large-Scale Computing is Important for NLP (non-exhaustive list):
 1. Text processing, that is, the act of turning text into a numeric input that a machine learning model can take in, would benefit largely from parallelization. Namely, tokenization, the act of breaking down chunks of text into smaller subunits (e.g., words) is a necessary step that can be computationally expensive, especially when dealing with large documents.
 2. Feature extraction such as obtaining n-grams from text can lead to extremely wide dataframes (high dimensions - count vectorizers increase in folds of the length of the vocabulary size, which can be in the tens of thousands), requiring substantial memory resources.
-3. Large language models (not used in this project, but can be applied to increase accuracy), have millions of parameters leading to the need for more compute-intensive resources.
-4. Model fine-tuning often involve computationally expensive and time consuming procedures such as hyperparameter tuning via grid search.
+3. Large language models (not used in this project, but can be applied to increase accuracy or other predictive tasks such as text summarization), have millions of parameters leading to the need for more compute-intensive resources.
+4. Model fine-tuning often involves computationally expensive and time consuming procedures such as hyperparameter tuning via grid search.
 
 ### 3. Project Details
 
