@@ -51,6 +51,7 @@ The project is divided into two main parts and uses PySpark:
         * **Unreliable (fake) articles:**
         <img src="output/fake_topics.png?raw=true"/>
         <br>
+        
         * **Reliable (real) articles:**
         <img src="output/real_topics.png?raw=true"/>
 
